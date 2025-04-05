@@ -5,25 +5,25 @@ import java.util.Map;
 
 public class LengthConverter implements Converter {
     private final Map<String, Map<String, Double>> rates = Map.of(
-            "milimetro", Map.of(
-                    "centimetro", 0.1,
-                    "metro", 0.001,
-                    "quilometro", 0.000001
+            "millimeter", Map.of(
+                    "centimeter", 0.1,
+                    "meter", 0.001,
+                    "kilometer", 0.000001
             ),
-            "centimetro", Map.of(
-                    "milimetro", 10.0,
-                    "metro", 0.01,
-                    "quilometro", 0.00001
+            "centimeter", Map.of(
+                    "millimeter", 10.0,
+                    "meter", 0.01,
+                    "kilometer", 0.00001
             ),
-            "metro", Map.of(
-                    "milimetro", 1000.0,
-                    "centimetro", 100.0,
-                    "quilometro", 0.001
+            "meter", Map.of(
+                    "millimeter", 1000.0,
+                    "centimeter", 100.0,
+                    "kilometer", 0.001
             ),
-            "quilometro", Map.of(
-                    "milimetro", 1_000_000.0,
-                    "centimetro", 100_000.0,
-                    "metro", 1000.0
+            "kilometer", Map.of(
+                    "millimeter", 1_000_000.0,
+                    "centimeter", 100_000.0,
+                    "meter", 1000.0
             )
     );
 
