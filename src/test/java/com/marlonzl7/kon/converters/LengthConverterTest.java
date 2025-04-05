@@ -19,7 +19,7 @@ public class LengthConverterTest {
 
             try {
                 double result = converter.convert(from, to, testValue);
-                System.out.printf("Conversion: %s -> %s | %f %s = %f %s%n", from, to, testValue, from, result, to);
+                System.out.printf("Conversion: %s -> %s | %.2f %s = %.2f %s%n", from, to, testValue, from, result, to);
             } catch (IllegalArgumentException e) {
                 System.out.printf("Error during conversion %s -> %s %s%n", from, to, e.getMessage());
             }
