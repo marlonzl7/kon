@@ -20,20 +20,20 @@ public class LengthConverterTest {
             try {
                 double result = converter.convert(from, to, testValue);
                 System.out.printf("Conversion: %s -> %s | %f %s = %f %s%n", from, to, testValue, from, result, to);
-            } catch(IllegalArgumentException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.printf("Error during conversion %s -> %s %s%n", from, to, e.getMessage());
             }
         }
 
         System.out.println("\n----- Invalid conversion tests -----");
 
-        // Caso 1: invalid source unit
+        // Case 1: invalid source unit
         testInvalidConversion(converter, "banana", "meter", 1.0);
 
-        // Caso 2: invalid target unit
+        // Case 2: invalid target unit
         testInvalidConversion(converter, "meter", "abacate", 1.0);
 
-        // Caso 3: unsupported conversion (e.g., "meter" to "gram" is not defined in the map)
+        // Case 3: unsupported conversion (e.g., "meter" to "gram" is not defined in the map)
         testInvalidConversion(converter, "meter", "gram", 1.0);
     }
 
