@@ -8,8 +8,8 @@ public class SpeedConverterTest {
         SpeedConverter converter = new SpeedConverter();
 
         System.out.println("----- Valid conversions tests -----");
-        for (int i = 0; i < converter.getSupportedConversions().size(); i++) {
-            String conversion = converter.getConversionByIndex(i);
+        for (int i = 0; i < SpeedConverter.getSupportedConversions().size(); i++) {
+            String conversion = SpeedConverter.getConversionByIndex(i);
             String[] parts = conversion.split("->");
             String from = parts[0];
             String to = parts[1];

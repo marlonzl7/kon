@@ -9,8 +9,8 @@ public class TemperatureConverterTest {
         TemperatureConverter converter = new TemperatureConverter();
 
         System.out.println("----- Valid conversions tests -----");
-        for (int i = 0; i < converter.getSupportedConversions().size(); i++) {
-            String conversion = converter.getConversionByIndex(i);
+        for (int i = 0; i < TemperatureConverter.getSupportedConversions().size(); i++) {
+            String conversion = TemperatureConverter.getConversionByIndex(i);
             String[] parts = conversion.split("->");
             String from = parts[0];
             String to = parts[1];

@@ -9,8 +9,8 @@ public class LengthConverterTest {
         LengthConverter converter = new LengthConverter();
 
         System.out.println("----- Valid conversions tests -----");
-        for (int i = 0; i < converter.getSupportedConversions().size(); i++) {
-            String conversion = converter.getConversionByIndex(i);
+        for (int i = 0; i < LengthConverter.getSupportedConversions().size(); i++) {
+            String conversion = LengthConverter.getConversionByIndex(i);
             String[] parts = conversion.split("->");
             String from = parts[0];
             String to = parts[1];
