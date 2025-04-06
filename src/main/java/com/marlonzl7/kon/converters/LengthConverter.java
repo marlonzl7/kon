@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class LengthConverter implements Converter {
-    private final Map<String, Map<String, Double>> rates = Map.of(
+    private static final Map<String, Map<String, Double>> RATES = Map.of(
             "millimeter", Map.of(
                     "centimeter", 0.1,
                     "meter", 0.001,
@@ -27,7 +27,7 @@ public class LengthConverter implements Converter {
             )
     );
 
-    private final List<String> supportedConversions = List.of(
+    private static final List<String> SUPPORTED_CONVERSIONS = List.of(
             "millimeter->centimeter",
             "millimeter->meter",
             "millimeter->kilometer",
@@ -44,22 +44,22 @@ public class LengthConverter implements Converter {
 
     @Override
     public double convert(String from, String to, double value) {
-        if (!rates.containsKey(from) || !rates.get(from).containsKey(to)) {
+        if (!RATES.containsKey(from) || !RATES.get(from).containsKey(to)) {
             throw new IllegalArgumentException("Conversion from " + from + " to " + to + " is not supported.");
         }
 
-        return value * rates.get(from).get(to);
+        return value * RATES.get(from).get(to);
     }
 
-    public List<String> getSupportedConversions() {
-        return supportedConversions;
+    public static List<String> getSupportedConversions() {
+        return SUPPORTED_CONVERSIONS;
     }
 
-    public String getConversionByIndex(int index) {
-        if (index < 0 || index >= supportedConversions.size()) {
+    public static String getConversionByIndex(int index) {
+        if (index < 0 || index >= SUPPORTED_CONVERSIONS.size()) {
             throw new IndexOutOfBoundsException("Invalid index");
         }
 
-        return supportedConversions.get(index);
+        return SUPPORTED_CONVERSIONS.get(index);
     }
 }

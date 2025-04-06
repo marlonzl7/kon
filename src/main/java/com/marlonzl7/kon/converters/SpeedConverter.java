@@ -3,7 +3,7 @@ package com.marlonzl7.kon.converters;
 import java.util.List;
 
 public class SpeedConverter implements Converter {
-    private final List<String> supportedConversions = List.of(
+    private static final List<String> SUPPORTED_CONVERSIONS = List.of(
             "ms->kmh",
             "ms->mph",
             "kmh->ms",
@@ -24,15 +24,15 @@ public class SpeedConverter implements Converter {
         };
     }
 
-    public List<String> getSupportedConversions() {
-        return supportedConversions;
+    public static List<String> getSupportedConversions() {
+        return SUPPORTED_CONVERSIONS;
     }
 
-    public String getConversionByIndex(int index) {
-        if (index < 0 || index >= supportedConversions.size()) {
+    public static String getConversionByIndex(int index) {
+        if (index < 0 || index >= SUPPORTED_CONVERSIONS.size()) {
             throw new IndexOutOfBoundsException("Invalid index");
         }
 
-        return supportedConversions.get(index);
+        return SUPPORTED_CONVERSIONS.get(index);
     }
 }
