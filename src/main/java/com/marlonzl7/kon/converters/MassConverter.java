@@ -8,8 +8,8 @@ public class MassConverter implements Converter {
             "gram", Map.of(
                     "kilogram", 0.001
             ),
-            "gram", Map.of(
-                    "kilogram", 1000.0
+            "kilogram", Map.of(
+                    "gram", 1000.0
             )
     );
 
