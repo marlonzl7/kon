@@ -4,23 +4,23 @@ import java.util.List;
 
 public class TimeConverter implements Converter {
     private static final List<String> SUPPORTED_CONVERSIONS = List.of(
-            "seconds->minutes",
-            "seconds->hours",
-            "minutes->seconds",
-            "minutes->hours",
-            "hours->seconds",
-            "hours->minutes"
+            "second->minute",
+            "second->hour",
+            "minute->second",
+            "minute->hour",
+            "hour->second",
+            "hour->minute"
     );
 
     @Override
     public double convert(String from, String to, double value) {
         return switch (from + "-" + to) {
-            case "seconds-minutes" -> value / 60;
-            case "seconds-hours" -> value / 3600;
-            case "minutes-seconds" -> value * 60;
-            case "minutes-hours" -> value / 60;
-            case "hours-seconds" -> value * 3600;
-            case "hours-minutes" -> value * 60;
+            case "second-minute" -> value / 60;
+            case "second-hour" -> value / 3600;
+            case "minute-second" -> value * 60;
+            case "minute-hour" -> value / 60;
+            case "hour-second" -> value * 3600;
+            case "hour-minute" -> value * 60;
             default -> throw new IllegalArgumentException("Conversions from " + from + " to " + to + " is not supported.");
         };
     }
