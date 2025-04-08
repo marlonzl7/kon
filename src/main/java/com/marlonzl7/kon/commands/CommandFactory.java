@@ -1,7 +1,5 @@
 package com.marlonzl7.kon.commands;
 
-import java.util.Map;
-
 public class CommandFactory {
     public static Command createCommand(String command) {
         return switch (command) {
