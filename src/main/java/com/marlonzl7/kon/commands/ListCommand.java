@@ -9,7 +9,7 @@ import java.util.Map;
 public class ListCommand implements Command {
     @Override
     public void execute(Map<String, String> arguments) {
-        String type = getKeyValue(arguments);
+        String type = arguments.get("list");
 
         if (type == null || type.isBlank()) {
             System.err.println("Error: no conversion type specified.");
@@ -29,18 +29,6 @@ public class ListCommand implements Command {
             case "volume" -> printSupportedConverions("Volume", VolumeConverter.getSupportedConversions());
             default -> throw new IllegalArgumentException("Invalid argument");
         }
-    }
-
-    private String getKeyValue(Map<String, String> arguments) {
-        if (arguments.containsKey("-l")) {
-            return arguments.get("-l");
-        }
-
-        if (arguments.containsKey("--list")) {
-            return arguments.get("--list");
-        }
-
-        return null;
     }
 
     private void printSupportedConverions(String type, List<String> conversions) {
