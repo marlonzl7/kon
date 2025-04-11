@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CommandParser {
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         if (args.length == 0) {
             Command command = CommandFactory.createCommand("help");
             command.execute(null);
