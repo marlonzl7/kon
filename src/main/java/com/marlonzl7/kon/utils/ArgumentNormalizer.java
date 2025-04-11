@@ -12,18 +12,25 @@ public class ArgumentNormalizer {
 
         aliasMap.put("-l", "list");
         aliasMap.put("--list", "list");
+        aliasMap.put("--listar", "list");
 
         aliasMap.put("-c", "convert");
         aliasMap.put("--convert", "convert");
+        aliasMap.put("--converter", "convert");
 
         aliasMap.put("-f", "from");
         aliasMap.put("--from", "from");
+        aliasMap.put("-d", "from");
+        aliasMap.put("--de", "from");
 
         aliasMap.put("-t", "to");
         aliasMap.put("--to", "to");
+        aliasMap.put("-p", "to");
+        aliasMap.put("--para", "to");
 
         aliasMap.put("-v", "value");
         aliasMap.put("--value", "value");
+        aliasMap.put("--valor", "value");
     }
 
     public static Map<String, String> normalize(Map<String, String> rawArgs) {
