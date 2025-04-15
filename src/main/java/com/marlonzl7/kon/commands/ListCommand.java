@@ -25,11 +25,12 @@ public class ListCommand implements Command {
     }
 
     private void printSupportedConverions(String type, List<String> conversions) {
-        System.out.printf("--- %s ---", TranslationHelper.translateCategory(type));
+        type = type.trim().toLowerCase();
+        System.out.printf("-------- %s --------%n", TranslationHelper.translateCategory(type).toUpperCase());
         for (String conversion : conversions) {
             String[] parts = conversion.split("->");
             if (parts.length == 2) {
-                System.out.printf(" - %s -> %s%n", parts[0], parts[1]);
+                System.out.printf(" - %s -> %s%n", TranslationHelper.translateUnit(parts[0]), TranslationHelper.translateUnit(parts[1]));
             }
         }
     }
