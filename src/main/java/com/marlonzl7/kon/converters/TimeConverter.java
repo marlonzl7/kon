@@ -1,5 +1,7 @@
 package com.marlonzl7.kon.converters;
 
+import com.marlonzl7.kon.utils.TranslationHelper;
+
 import java.util.List;
 
 public class TimeConverter implements Converter {
@@ -21,7 +23,7 @@ public class TimeConverter implements Converter {
             case "minute-hour" -> value / 60;
             case "hour-second" -> value * 3600;
             case "hour-minute" -> value * 60;
-            default -> throw new IllegalArgumentException("Conversions from " + from + " to " + to + " is not supported.");
+            default -> throw new IllegalArgumentException(String.format("Conversão de %s para %s não é suportada", TranslationHelper.translateUnit(from), TranslationHelper.translateUnit(to)));
         };
     }
 
@@ -31,7 +33,7 @@ public class TimeConverter implements Converter {
 
     public static String getConversionByIndex(int index) {
         if (index < 0 || index >= SUPPORTED_CONVERSIONS.size()) {
-            throw new IndexOutOfBoundsException("Invalid index");
+            throw new IndexOutOfBoundsException("Indice inválido");
         }
 
         return SUPPORTED_CONVERSIONS.get(index);
