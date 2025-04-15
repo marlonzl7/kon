@@ -3,6 +3,7 @@ package com.marlonzl7.kon.core;
 import com.marlonzl7.kon.commands.Command;
 import com.marlonzl7.kon.commands.CommandFactory;
 import com.marlonzl7.kon.utils.ArgumentNormalizer;
+import com.marlonzl7.kon.utils.CommandValidator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,7 @@ public class CommandParser {
 
         Map<String, String> rawArgs = parseArgsToMap(args);
         Map<String, String> arguments = ArgumentNormalizer.normalize(rawArgs);
+        CommandValidator.validate(arguments);
 
         if (arguments.containsKey("help")) {
             Command command = CommandFactory.createCommand("help");
