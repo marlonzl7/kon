@@ -11,7 +11,7 @@ public class CommandFactory {
             case "temperature" -> new TemperatureConvertCommand();
             case "time" -> new TimeConvertCommand();
             case "volume" -> new VolumeConvertCommand();
-            default -> throw new IllegalArgumentException("Unknown command.");
+            default -> throw new IllegalArgumentException("Comando desconhecido.");
         };
     }
 }

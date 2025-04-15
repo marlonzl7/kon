@@ -1,6 +1,7 @@
 package com.marlonzl7.kon.commands;
 
 import com.marlonzl7.kon.converters.*;
+import com.marlonzl7.kon.utils.TranslationHelper;
 
 import java.util.List;
 import java.util.Map;
@@ -9,13 +10,6 @@ public class ListCommand implements Command {
     @Override
     public void execute(Map<String, String> arguments) {
         String type = arguments.get("list");
-
-        if (type == null || type.isBlank()) {
-            System.err.println("Error: no conversion type specified.");
-            System.err.println("Use -l or --list followed by a value");
-            System.err.println("Example: kon --list speed");
-            return;
-        }
 
         type = type.trim().toLowerCase();
 
@@ -31,11 +25,11 @@ public class ListCommand implements Command {
     }
 
     private void printSupportedConverions(String type, List<String> conversions) {
-        System.out.println("--- " + type.toUpperCase() + " CONVERSIONS ---");
+        System.out.printf("--- %s ---", TranslationHelper.translateCategory(type));
         for (String conversion : conversions) {
             String[] parts = conversion.split("->");
             if (parts.length == 2) {
-                System.out.printf(" - %s to %s%n", parts[0], parts[1]);
+                System.out.printf(" - %s -> %s%n", parts[0], parts[1]);
             }
         }
     }

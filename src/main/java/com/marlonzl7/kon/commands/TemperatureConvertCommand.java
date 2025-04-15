@@ -15,6 +15,6 @@ public class TemperatureConvertCommand implements Command {
         Converter converter = new TemperatureConverter();
         double result = converter.convert(from, to, value);
 
-        System.out.printf("Result: %.2f %s -> %.2f %s%n", value, from, result, to);
+        System.out.printf("Resultado: %.2f %s -> %.2f %s%n", value, from, result, to);
     }
 }
