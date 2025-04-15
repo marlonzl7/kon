@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class TranslationHelper {
     private static final Map<String, String> unitTranslations = Map.ofEntries(
-            Map.entry("millimiter", "milímetro"),
+            Map.entry("millimeter", "milímetro"),
             Map.entry("centimeter", "centímetro"),
             Map.entry("meter", "metro"),
             Map.entry("kilometer", "quilômetro"),
