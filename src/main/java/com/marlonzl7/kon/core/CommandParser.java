@@ -49,14 +49,10 @@ public class CommandParser {
         Map<String, String> arguments = new HashMap<>();
 
         for (int i = 0; i < args.length; i++) {
-            if (args[i].startsWith("-") || args[i].startsWith("--")) {
-                if (i + 1 < args.length) {
-                    if (!args[i + 1].startsWith("-") || args[i + 1].startsWith("--")) {
-                        arguments.put(args[i], args[i + 1]);
-                        i++;
-                    } else {
-                        arguments.put(args[i], "");
-                    }
+            if (args[i].startsWith("-")) {
+                if (i + 1 < args.length && !args[i + 1].startsWith("-")) {
+                    arguments.put(args[i], args[i + 1]);
+                    i++;
                 } else {
                     arguments.put(args[i], "");
                 }
