@@ -50,7 +50,7 @@ public class CommandParser {
 
         for (int i = 0; i < args.length; i++) {
             if (args[i].startsWith("-")) {
-                if (i + 1 < args.length && !args[i + 1].startsWith("-")) {
+                if (i + 1 < args.length && isValue(args[i + 1])) {
                     arguments.put(args[i], args[i + 1]);
                     i++;
                 } else {
@@ -60,5 +60,9 @@ public class CommandParser {
         }
 
         return arguments;
+    }
+
+    private static boolean isValue(String arg) {
+        return !(arg.startsWith("--") || arg.matches("^-[a-zA-Z]+$"));
     }
 }
