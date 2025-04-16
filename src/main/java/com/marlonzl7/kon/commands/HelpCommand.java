@@ -6,7 +6,8 @@ public class HelpCommand implements Command {
 
     @Override
     public void execute(Map<String, String> arguments) {
-        System.out.println("Kon - Conversor de Unidades");
+        String version = "1.0.0";
+        System.out.printf("Kon - Conversor de Unidades (v%s)%n", version);
         System.out.println();
 
         System.out.println("Uso:");
@@ -34,6 +35,12 @@ public class HelpCommand implements Command {
         System.out.println("kon --list length");
         System.out.println("    Lista todas as unidades disponíveis para a grandeza 'length'.");
         System.out.println();
+
+        System.out.println("Suporte a português:");
+        System.out.println(" - É possível usar as flags, unidades e grandezas em português.");
+        System.out.println(" - Exemplo:");
+        System.out.println("   kon --converter comprimento --de metro --para quilometro --valor 1000");
+        System.out.println("     (Funciona igual usar 'length', 'meter', 'kilometer')");
 
         System.out.println("Notas:");
         System.out.println(" - Os nomes das grandezas devem ser escritos em minúsculas (ex: mass, temperature)");
