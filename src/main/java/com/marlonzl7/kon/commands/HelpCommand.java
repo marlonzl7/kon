@@ -41,6 +41,7 @@ public class HelpCommand implements Command {
         System.out.println(" - Exemplo:");
         System.out.println("   kon --converter comprimento --de metro --para quilometro --valor 1000");
         System.out.println("     (Funciona igual usar 'length', 'meter', 'kilometer')");
+        System.out.println();
 
         System.out.println("Notas:");
         System.out.println(" - Os nomes das grandezas devem ser escritos em minúsculas (ex: mass, temperature)");
