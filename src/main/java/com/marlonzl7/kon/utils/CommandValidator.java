@@ -13,7 +13,7 @@ public class CommandValidator {
             String category = args.get("list");
 
             if (category == null || category.isEmpty()) {
-                throw new IllegalArgumentException("Você deve informar uma categoria para listar as conversões");
+                throw new IllegalArgumentException("Você deve informar uma grandeza para listar as conversões");
             }
 
             return;
@@ -23,7 +23,7 @@ public class CommandValidator {
             String category = args.get("convert");
 
             if (category == null || category.isEmpty()) {
-                throw new IllegalArgumentException("Você deve informar a categoria para conversão.");
+                throw new IllegalArgumentException("Você deve informar a grandeza para conversão.");
             }
 
             if (!args.containsKey("from")) {
