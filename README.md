@@ -14,10 +14,13 @@ Pré-requisitos
  - Java 21 ou superior
 
 Passos
+<pre>
  - Baixe a versão mais recente
  - unzip kon.zip && cd kon
+ - chmod +x install.sh
  - ./install.sh
  - source ~/bashrc
+</pre>
 
 ## Uso básico
 
