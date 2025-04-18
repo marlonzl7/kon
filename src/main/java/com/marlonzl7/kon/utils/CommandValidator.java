@@ -39,9 +39,14 @@ public class CommandValidator {
             }
         }
 
+        if (args.containsKey("version")) {
+            return;
+        }
+
         if (!args.containsKey("help") &&
             !args.containsKey("list") &&
-            !args.containsKey("convert")) {
+            !args.containsKey("convert") &&
+            !args.containsKey("version")) {
             throw new IllegalArgumentException("Nenhum comando conhecido foi informado.");
         }
     }

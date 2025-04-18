@@ -43,6 +43,12 @@ public class CommandParser {
 
             throw new IllegalArgumentException("The value of greatness cannot be null.");
         }
+
+        if (arguments.containsKey("version")) {
+            Command command = CommandFactory.createCommand("version");
+            command.execute(arguments);
+            return;
+        }
     }
 
     private static Map<String, String> parseArgsToMap(String[] args) {

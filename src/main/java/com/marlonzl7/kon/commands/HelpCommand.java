@@ -1,5 +1,7 @@
 package com.marlonzl7.kon.commands;
 
+import com.marlonzl7.kon.utils.Version;
+
 import java.util.Map;
 
 public class HelpCommand implements Command {
@@ -7,7 +9,7 @@ public class HelpCommand implements Command {
     @Override
     public void execute(Map<String, String> arguments) {
         String version = "1.0.0";
-        System.out.printf("Kon - Conversor de Unidades (v%s)%n", version);
+        System.out.printf("Kon - Conversor de Unidades (v%s)%n", Version.getVersion());
         System.out.println();
 
         System.out.println("Uso:");
