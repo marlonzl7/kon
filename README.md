@@ -6,9 +6,9 @@ Kon é uma ferramenta de linha de comando simples para converter unidades rapida
 
 kon -c temp -f C -t F -v 100
 
-### Saída: 212.0
+Saída: 212.0
 
-# Instalação
+## Instalação
 
 Pré-requisitos
  - Java 21 ou superior
@@ -19,7 +19,7 @@ Passos
  - ./install.sh
  - source ~/bashrc
 
-# Uso básico
+## Uso básico
 
 Comandos disponíveis:
 
@@ -32,13 +32,13 @@ Converte um valor de uma unidade para outra
 kon --help, -h
 Exibe o guia de uso
 
-# Desinstalação
+## Desinstalação
 
 rm -rf ~/.kon
 
-# Autor
+## Autor
 
-## Marlon de Souza
+### Marlon de Souza
 
 github: @marlonzl7
 
