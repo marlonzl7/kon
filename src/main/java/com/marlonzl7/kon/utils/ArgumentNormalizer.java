@@ -35,6 +35,9 @@ public class ArgumentNormalizer {
         flagAliasMap.put("--value", "value");
         flagAliasMap.put("--valor", "value");
 
+        flagAliasMap.put("--version", "version");
+        flagAliasMap.put("-version", "version");
+
         // --- CATEGORIES
         categoryAliasMap.put("len", "length");
         categoryAliasMap.put("length", "length");
