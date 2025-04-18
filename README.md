@@ -35,14 +35,10 @@ Comandos disponíveis:
 <pre>
 kon --list, -l <grandeza>
 # Lista as unidades disponíveis de uma grandeza
-</pre>
 
-<pre>
 kon --convert, -c <grandeza> --from, -f <unidade-origem> --to, -t <unidade-destino> --value, -v <valor>
 # Converte um valor de uma unidade para outra
-</pre>
 
-<pre>
 kon --help, -h
 # Exibe o guia de uso
 </pre>
