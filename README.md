@@ -4,7 +4,9 @@ Kon é uma ferramenta de linha de comando simples para converter unidades rapida
 
 ## Demonstração
 
+<pre>
 kon -c temp -f C -t F -v 100
+</pre>
 
 Saída: 212.0
 
