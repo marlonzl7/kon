@@ -32,22 +32,26 @@ Passos
 
 Comandos disponíveis:
 
+<pre>
 kon --list, -l <grandeza>
-Lista as unidades disponíveis de uma grandeza
+# Lista as unidades disponíveis de uma grandeza
+</pre>
 
+<pre>
 kon --convert, -c <grandeza> --from, -f <unidade-origem> --to, -t <unidade-destino> --value, -v <valor>
-Converte um valor de uma unidade para outra
+# Converte um valor de uma unidade para outra
+</pre>
 
+<pre>
 kon --help, -h
-Exibe o guia de uso
+# Exibe o guia de uso
+</pre>
 
 ## Desinstalação
 
-rm -rf ~/.kon
+<pre> rm -rf ~/.kon </pre>
 
-## Autor
+---
 
-### Marlon de Souza
-
-github: @marlonzl7
+Desenvolvido por [@marlonzl7](https://github.com/marlonzl7)
 
