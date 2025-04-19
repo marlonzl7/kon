@@ -11,6 +11,11 @@ public class ListCommand implements Command {
     public void execute(Map<String, String> arguments) {
         String type = arguments.get("list");
 
+        if (type == null || type.trim().isEmpty()) {
+            printAvailableCategories();
+            return;
+        }
+
         type = type.trim().toLowerCase();
 
         switch (type) {
@@ -33,5 +38,15 @@ public class ListCommand implements Command {
                 System.out.printf(" - %s -> %s%n", TranslationHelper.translateUnit(parts[0]), TranslationHelper.translateUnit(parts[1]));
             }
         }
+    }
+
+    private void printAvailableCategories() {
+        System.out.println("Grandezas disponíveis para conversão:");
+        System.out.println(" - Comprimento");
+        System.out.println(" - Massa");
+        System.out.println(" - Velocidade");
+        System.out.println(" - Temperatura");
+        System.out.println(" - Tempo");
+        System.out.println(" - Volume");
     }
 }

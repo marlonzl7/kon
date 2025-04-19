@@ -10,12 +10,6 @@ public class CommandValidator {
         }
 
         if (args.containsKey("list")) {
-            String category = args.get("list");
-
-            if (category == null || category.isEmpty()) {
-                throw new IllegalArgumentException("Você deve informar uma grandeza para listar as conversões");
-            }
-
             return;
         }
 
