@@ -8,7 +8,6 @@ public class HelpCommand implements Command {
 
     @Override
     public void execute(Map<String, String> arguments) {
-        String version = "1.0.0";
         System.out.printf("Kon - Conversor de Unidades (v%s)%n", Version.getVersion());
         System.out.println();
 
@@ -23,7 +22,7 @@ public class HelpCommand implements Command {
         System.out.println("-f, --from <unidade>         Unidade de origem (ex: kg, m, C)");
         System.out.println("-t, --to <unidade>           Unidade de destino (ex: g, cm, F)");
         System.out.println("-v, --value <valor>          Valor numérico a ser convertido");
-        System.out.println("-l, --list <grandeza>        Lista as unidades disponíveis para grandeza informada");
+        System.out.println("-l, --list [<grandeza>]      Lista as unidades disponíveis para a grandeza informada ou, se omitida, mostra todas as grandezas disponíveis");
         System.out.println("-h, --help                   Exibe esta mensagem de ajuda");
         System.out.println();
 
@@ -43,6 +42,9 @@ public class HelpCommand implements Command {
         System.out.println(" - Exemplo:");
         System.out.println("   kon --converter comprimento --de metro --para quilometro --valor 1000");
         System.out.println("     (Funciona igual usar 'length', 'meter', 'kilometer')");
+        System.out.println();
+
+        new ListCommand().execute(Map.of("list", ""));
         System.out.println();
 
         System.out.println("Notas:");
