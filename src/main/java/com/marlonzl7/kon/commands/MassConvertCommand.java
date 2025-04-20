@@ -1,0 +1,21 @@
+package com.marlonzl7.kon.commands;
+
+import com.marlonzl7.kon.converters.Converter;
+import com.marlonzl7.kon.converters.MassConverter;
+import com.marlonzl7.kon.utils.TranslationHelper;
+
+import java.util.Map;
+
+public class MassConvertCommand implements Command {
+    @Override
+    public void execute(Map<String, String> arguments) {
+        String from = arguments.get("from");
+        String to = arguments.get("to");
+        double value = Double.parseDouble(arguments.get("value"));
+
+        Converter converter = new MassConverter();
+        double result = converter.convert(from, to, value);
+
+        System.out.printf("Resultado: %.2f %s -> %.2f %s%n", value, TranslationHelper.translateUnit(from), result, TranslationHelper.translateUnit(to));
+    }
+}
