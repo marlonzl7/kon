@@ -50,5 +50,6 @@ public class HelpCommand implements Command {
         System.out.println("Notas:");
         System.out.println(" - Os nomes das grandezas devem ser escritos em minúsculas (ex: mass, temperature)");
         System.out.println(" - Utilize 'kon --list' para descobrir quais unidades estão disponíveis para conversão");
+        System.out.println(" - Utilize 'kon --list <grandeza>' para descobrir quais as conversões disponíveis para grandeza em questão");
     }
 }
